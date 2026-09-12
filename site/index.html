@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Servidor - Upload e Arquivos</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="logo">MEU SERVER</div>
+      <nav class="menu">
+        <a href="#home">Início</a>
+        <a href="#upload">Upload</a>
+        <a href="#arquivos">Arquivos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-text">
+          <span class="badge">Servidor de arquivos online</span>
+          <h1>Gerencie arquivos com rapidez e segurança</h1>
+          <p>
+            Centralize uploads, organize documentos e acompanhe seus arquivos em
+            uma interface moderna e pronta para crescer.
+          </p>
+          <div class="hero-actions">
+            <a href="#upload" class="btn btn-primary">Enviar arquivo</a>
+            <button class="btn btn-secondary" type="button" onclick="mostrarAlerta()">
+              Testar sistema
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="stats">
+            <div>
+              <strong id="fileCount">0</strong>
+              <span>Arquivos</span>
+            </div>
+            <div>
+              <strong>99%</strong>
+              <span>Disponibilidade</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>Monitoramento</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="upload-section" id="upload">
+        <div class="section-title">
+          <span>Upload</span>
+          <h2>Enviar novo arquivo</h2>
+        </div>
+
+        <form class="upload-form" id="uploadForm" method="post" action="/upload" enctype="multipart/form-data">
+          <label>
+            Nome do arquivo
+            <input type="text" name="nome" placeholder="Ex: relatório-final.pdf" />
+          </label>
+
+          <label>
+            Categoria
+            <select name="categoria">
+              <option value="documento">Documento</option>
+              <option value="imagem">Imagem</option>
+              <option value="video">Vídeo</option>
+              <option value="outros">Outros</option>
+            </select>
+          </label>
+
+          <label>
+            Descrição
+            <textarea name="descricao" rows="4" placeholder="Descreva o arquivo..."></textarea>
+          </label>
+
+          <label>
+            Arquivo
+            <input type="file" name="arquivo" id="arquivoInput" required />
+          </label>
+
+          <div class="file-preview" id="filePreview">
+            Nenhum arquivo selecionado.
+          </div>
+
+          <button type="submit" class="btn btn-primary">Salvar arquivo</button>
+        </form>
+      </section>
+
+      <section class="files-panel" id="arquivos">
+        <div class="section-title">
+          <span>Arquivos</span>
+          <h2>Lista de arquivos salvos</h2>
+        </div>
+        <div id="fileList" class="file-list">
+          <p class="empty-state">Carregando arquivos...</p>
+        </div>
+      </section>
+
+      <section class="features" id="recursos">
+        <div class="feature-card">
+          <h3>📁 Upload rápido</h3>
+          <p>Envie arquivos em poucos segundos com suporte para múltiplos tipos.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🗄️ Banco SQL</h3>
+          <p>Estrutura de usuários e arquivos pronta em <strong>sql/database.sql</strong>.</p>
+        </div>
+        <div class="feature-card">
+          <h3>⚙️ Backend C++</h3>
+          <p>Base para servidor local e processamento de arquivos em C++.</p>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <div class="section-title center">
+          <span>Contato</span>
+          <h2>Pronto para expandir seu servidor</h2>
+        </div>
+        <p>Seu painel já está preparado para receber novas telas, autenticação e armazenamento real.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Criado no Termux • 2026</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
