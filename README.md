@@ -1,2 +1,2 @@
 # teste
-Repositório de teste com agente para geração de código
+esse site pode servir como base pra futuros projetos
